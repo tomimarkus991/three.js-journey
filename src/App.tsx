@@ -1,4 +1,4 @@
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 
@@ -10,14 +10,13 @@ const App = () => {
     height: window.innerHeight,
   };
   return (
-    <Canvas
-      camera={{
-        isPerspectiveCamera: true,
-        fov: 75,
-        aspect: sizes.width / sizes.height,
-        position: [0, 0, 4],
-      }}
-    >
+    <Canvas>
+      <PerspectiveCamera
+        makeDefault
+        fov={75}
+        aspect={sizes.width / sizes.height}
+        position={[0, 0, 5]}
+      />
       <Suspense fallback={null}>
         <OrbitControls autoRotate />
       </Suspense>
