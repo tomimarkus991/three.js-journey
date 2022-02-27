@@ -3,7 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -11,7 +14,7 @@
 html,
 body {
   height: 100vh;
-  background-color: #191d22;
+  /* background-color: #191d22; */
 }
 
 #root {
